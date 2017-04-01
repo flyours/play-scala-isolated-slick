@@ -22,7 +22,7 @@ import scala.language.implicitConversions
 @Singleton
 class SlickUserDAO @Inject()(db: Database)(implicit ec: ExecutionContext) extends UserDAO with Tables {
 
-  override val profile: JdbcProfile = _root_.slick.driver.H2Driver
+  override val profile: JdbcProfile = _root_.slick.driver.PostgresDriver
 
   import profile.api._
 

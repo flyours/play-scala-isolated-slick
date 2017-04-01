@@ -5,6 +5,7 @@ libraryDependencies ++= Seq(
   "com.zaxxer" % "HikariCP" % "2.4.1",
   "com.typesafe.slick" %% "slick" % "3.1.1",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.1.1",
+  "org.postgresql" % "postgresql" % "9.3-1102-jdbc4",
   "com.github.tototoshi" %% "slick-joda-mapper" % "2.2.0"
 )
 
@@ -16,8 +17,8 @@ slickCodegenSettings
 slickCodegenDatabaseUrl := databaseUrl
 slickCodegenDatabaseUser := databaseUser
 slickCodegenDatabasePassword := databasePassword
-slickCodegenDriver := slick.driver.H2Driver
-slickCodegenJdbcDriver := "org.h2.Driver"
+slickCodegenDriver := slick.driver.PostgresDriver
+slickCodegenJdbcDriver := "org.postgresql.Driver"
 slickCodegenOutputPackage := "com.example.user.slick"
 slickCodegenExcludedTables := Seq("schema_version")
 
